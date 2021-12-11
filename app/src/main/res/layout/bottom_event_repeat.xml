@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/bottom_event_repeat"
+    android:padding="20dp">
+
+    <RadioGroup
+        android:id="@+id/radio_repeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/level0"
+            android:checked="true"
+            android:text="Không bao giờ"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:layoutDirection="rtl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/level1"
+            android:text="Hàng ngày"
+            android:textSize="16dp"
+            android:layoutDirection="rtl"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/level2"
+            android:text="Hàng tuần"
+            android:textSize="16dp"
+            android:padding="10dp"
+            android:layoutDirection="rtl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/level3"
+            android:text="Hàng tháng"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:layoutDirection="rtl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/level4"
+            android:text="Hàng năm"
+            android:textSize="16dp"
+            android:layoutDirection="rtl"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/accpect_btn"
+            android:layout_marginTop="10dp"
+            android:text="Xác nhận"
+            android:layout_gravity="end"
+            android:textSize="16dp"
+            android:backgroundTint="@color/xanh"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+</LinearLayout>

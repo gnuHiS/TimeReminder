@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.habit.AddHabitActivity">
+    <RelativeLayout
+        android:id="@+id/action"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/cancel"
+            android:text="Huỷ bỏ"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Sự Kiện Mới"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/save"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/action"
+        android:layout_margin="10dp">
+        <EditText
+            android:id="@+id/habit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:textColorHint="@color/black"
+            android:hint="Tên thói quen"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Lặp lại"
+            android:padding="10dp"
+            android:drawableBottom="@drawable/line_green"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+            <Button
+                android:id="@+id/bt"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:textColor="@color/white"
+                android:text="Thứ 2"/>
+            <Button
+                android:id="@+id/b3"
+                android:layout_gravity="fill"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Thứ 3"/>
+            <Button
+                android:id="@+id/b4"
+                android:layout_gravity="fill"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Thứ 4" />
+            <Button
+                android:id="@+id/b5"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Thứ 5" />
+            <Button
+                android:id="@+id/b6"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Thứ 6" />
+            <Button
+                android:id="@+id/b7"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Thứ 7" />
+
+            <Button
+                android:id="@+id/b8"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/xanh"
+                android:text="Chủ nhật"/>
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cài đặt nhắc nhở"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:drawableBottom="@drawable/line_green_lg"/>
+
+        <TextView
+            android:id="@+id/habit_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Chưa thiết lập nhắc nhở"
+            android:textSize="18sp"
+            android:drawableEnd="@drawable/ic_arrow_forward"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

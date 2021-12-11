@@ -1,0 +1,19 @@
+<resources>
+    <string name="habit">Nhắc nhở thói quen</string>
+    <string name="khong_bao_gio">Không bao giờ</string>
+    <string name="dung_gio">Nhắc đúng giờ</string>
+    <string name="bd_30">Trước khi bắt đầu 30 ngày</string>
+    <string name="bd_7">Trước khi bắt đầu 7 ngày</string>
+    <string name="bd_1">Trước khi bắt đầu 1 ngày</string>
+    <string name="xac_nhan">Xác nhận</string>
+    <string name="show_nhac_nho">Show nhắc nhở</string>
+    <string name="thoi_gian">Thời gian</string>
+    <string name="time">06:00:00 - 11:45:00</string>
+    <string name="accept">Xác Nhận</string>
+    <string name="event">Sự Kiện</string>
+    <string name="calender">Lịch</string>
+    <string name="user">Tài Khoản</string>
+    <string name="dashboard">Tiện ích</string>
+    <string name="home">Trang Chủ</string>
+    <string name="app_name">Nhom13</string>
+</resources>
