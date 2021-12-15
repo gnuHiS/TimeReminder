@@ -18,13 +18,15 @@
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/activity_user.xml" value="0.17864583333333334" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_event_date.xml" value="0.10989583333333333" />
-        <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_event_repeat.xml" value="0.10989583333333333" />
+        <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_event_repeat.xml" value="0.21" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_event_setting.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_event_time.xml" value="0.10989583333333333" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/bottom_habit_time.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/event_add.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/event_detail.xml" value="0.14270833333333333" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/event_item.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/layout/habit_item.xml" value="0.22" />
+        <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/menu/manage.xml" value="0.17760416666666667" />
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/menu/nav.xml" value="0.20416666666666666" />
       </map>
     </option>

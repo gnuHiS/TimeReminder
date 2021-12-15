@@ -1,8 +1,5 @@
 package com.example.nhom13.activity.event;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,18 +17,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.nhom13.MainActivity;
 import com.example.nhom13.R;
 import com.example.nhom13.database.DBHelper;
 import com.example.nhom13.database.EventHelper;
+import com.example.nhom13.model.Event;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class AddEventActivity extends AppCompatActivity {
+public class EditEventActivity extends AppCompatActivity {
     EditText event_name;
     TextView eventDate;
     TextView eventRepeat;
@@ -40,8 +32,9 @@ public class AddEventActivity extends AppCompatActivity {
     CardView event_date;
     CardView event_setting;
     CardView event_time;
-    TextView eventTime;
     TextView cancel;
+    TextView eventTime;
+    TextView eventSetting;
     TextView save;
     RadioButton event_important;
     long timeRepeat;
@@ -54,6 +47,7 @@ public class AddEventActivity extends AppCompatActivity {
     private static final long milMonth = 2592000000L;
     DBHelper dbHelper;
     EventHelper db;
+    int id;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +55,17 @@ public class AddEventActivity extends AppCompatActivity {
         anhxa();
         dbHelper = new DBHelper(this);
         db = new EventHelper(dbHelper);
+        Intent i = getIntent();
+        Bundle b = i.getBundleExtra("event");
+        Event e = (Event) b.getSerializable("event");
+        Toast.makeText(this, e.getDate(), Toast.LENGTH_SHORT).show();
+        id = e.getId();
+        event_name.setText(e.getName());
+        eventDate.setText(e.getDate());
+        eventTime.setText(e.getTime());
+        eventRepeat.setText(e.getRepeat());
+        eventSetting.setText(String.valueOf(e.getSetting()));
+
     }
 
     private void anhxa(){
@@ -70,10 +75,12 @@ public class AddEventActivity extends AppCompatActivity {
         event_time = findViewById(R.id.event_time);
         event_setting = findViewById(R.id.event_setting);
         eventTime = findViewById(R.id.eventTime);
+        eventDate = findViewById(R.id.eventDate);
         cancel = findViewById(R.id.cancel);
         save = findViewById(R.id.save);
         eventRepeat = findViewById(R.id.eventRepeat);
         event_important = findViewById(R.id.event_important);
+        eventSetting = findViewById(R.id.eventSetting);
     }
 
     @Override
@@ -100,7 +107,7 @@ public class AddEventActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddEventActivity.this, EventActivity.class);
+                Intent intent = new Intent(EditEventActivity.this, EventActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -124,7 +131,7 @@ public class AddEventActivity extends AppCompatActivity {
 
                 String setting = String.valueOf(timeSetting);
                 if (name.equals("") || date.equals("") || time.equals("") || repeat.equals("") || setting.equals("")){
-                    Toast.makeText(AddEventActivity.this, "Vui lòng nhập dữ liệu ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditEventActivity.this, "Vui lòng nhập dữ liệu ", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 int important = 0;
@@ -133,17 +140,18 @@ public class AddEventActivity extends AppCompatActivity {
                     important = 1;
                 }
 
-                int result = db.insert(name, date, time, repeat, 1, important);
+                int result = db.update(id,name, date, time, repeat, 1, important);
 //                if(result==1){
 //                    setAlarm(name, date, time);
 //                }
                 Intent i = getIntent();
+                i.putExtra("id",id);
                 i.putExtra("name",name);
                 i.putExtra("date", date);
                 i.putExtra("time", timeTonotify);
                 i.putExtra("result", result);
                 i.putExtra("timeRepeat", timeRepeat);
-                setResult(EventActivity.ADD_RESULT, i);
+                setResult(EventActivity.EDIT_RESULT, i);
                 finish();
             }
         });
@@ -297,32 +305,32 @@ public class AddEventActivity extends AppCompatActivity {
         radioRepeat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i){
-                    case R.id.level0:{
+                switch (i) {
+                    case R.id.level0: {
                         RadioButton r = viewBottomDialog.findViewById(R.id.level0);
                         s = r.getText().toString();
                         timeRepeat = 0;
                         break;
                     }
-                    case R.id.level1:{
+                    case R.id.level1: {
                         RadioButton r = viewBottomDialog.findViewById(R.id.level1);
                         s = r.getText().toString();
                         timeRepeat = milDay;
                         break;
                     }
-                    case R.id.level2:{
+                    case R.id.level2: {
                         RadioButton r = viewBottomDialog.findViewById(R.id.level2);
                         s = r.getText().toString();
                         timeRepeat = milWeek;
                         break;
                     }
-                    case R.id.level3:{
+                    case R.id.level3: {
                         RadioButton r = viewBottomDialog.findViewById(R.id.level3);
                         s = r.getText().toString();
                         timeRepeat = milMonth;
                         break;
                     }
-                    case R.id.level4:{
+                    case R.id.level4: {
                         RadioButton r = viewBottomDialog.findViewById(R.id.level4);
                         s = r.getText().toString();
                         timeRepeat = milMonth * 12;
@@ -341,8 +349,5 @@ public class AddEventActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-
-}
+    }

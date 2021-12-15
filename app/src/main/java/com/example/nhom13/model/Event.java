@@ -7,11 +7,11 @@ public class Event implements Serializable {
     String name;
     String date;
     String time;
-    int repeat;
+    String repeat;
     int setting;
     int important;
 
-    public Event(int id, String name, String date, String time, int repeat, int setting, int important) {
+    public Event(int id, String name, String date, String time, String repeat, int setting, int important) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -53,11 +53,11 @@ public class Event implements Serializable {
         this.time = time;
     }
 
-    public int getRepeat() {
+    public String getRepeat() {
         return repeat;
     }
 
-    public void setRepeat(int repeat) {
+    public void setRepeat(String repeat) {
         this.repeat = repeat;
     }
 

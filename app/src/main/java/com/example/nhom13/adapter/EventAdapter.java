@@ -46,7 +46,8 @@ public class EventAdapter extends BaseAdapter {
 
         Event event = (Event) getItem(i);
         ((TextView) v.findViewById(R.id.event_title)).setText(event.getName());
-        ((TextView) v.findViewById(R.id.event_repeat)).setText("Hàng năm");
+
+        ((TextView) v.findViewById(R.id.event_repeat)).setText(event.getRepeat());
         ((TextView) v.findViewById(R.id.event_date_time)).setText(event.getDate() + ", " + event.getTime());
         return  v;
     }
