@@ -56,15 +56,15 @@ public class EventHelper {
         return 1;
     }
 
-//    public Cursor getByID(int id){
-//        Cursor cursor = null;
-//        String sql = "SELECT * FROM event WHERE id = " + String.valueOf(id);
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        if (db !=null){
-//            cursor = db.
-//        }
-//        return cursor;
-//    }
+    public Cursor getByDate(String date){
+        Cursor cursor = null;
+        String sql = "SELECT * FROM event WHERE date = '" + date + "'";
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        if (db !=null){
+            cursor = db.rawQuery(sql, null);
+        }
+        return cursor;
+    }
 
     public int delete(int id){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
