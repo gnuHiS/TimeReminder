@@ -33,7 +33,7 @@ public class UserActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id){
                     case R.id.home:{
-                        Intent main = new Intent(UserActivity.this, EventActivity.class);
+                        Intent main = new Intent(UserActivity.this, MainActivity.class);
                         startActivity(main);
                         break;
                     }
