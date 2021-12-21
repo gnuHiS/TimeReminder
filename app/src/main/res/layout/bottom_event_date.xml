@@ -21,8 +21,7 @@
         android:layout_height="wrap_content"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        android:padding="10dp"
-        />
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/accecpt_btn"

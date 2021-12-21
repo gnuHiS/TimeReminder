@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.nhom13.activity.countdown.CountDownActivity;
+import com.example.nhom13.activity.diary.DiaryActivity;
 import com.example.nhom13.activity.event.EventActivity;
 import com.example.nhom13.activity.habit.HabitActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -59,6 +60,13 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashBoardActivity.this, CountDownActivity.class);
+                startActivity(i);
+            }
+        });
+        memoryOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashBoardActivity.this, DiaryActivity.class);
                 startActivity(i);
             }
         });

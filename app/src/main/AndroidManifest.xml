@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".activity.diary.DiaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.diary.AddDiaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.habit.AddHabitActivity"
             android:exported="false" />
         <activity
