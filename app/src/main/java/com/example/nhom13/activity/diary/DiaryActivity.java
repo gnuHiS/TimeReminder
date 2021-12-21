@@ -67,6 +67,21 @@ public class DiaryActivity extends AppCompatActivity {
         super.onStart();
         loadData();
         registerForContextMenu(gridView);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(DiaryActivity.this,DiaryDetail.class);
+                Diary temp = arrayDiary.get(arrayDiary.size()-position-1);
+                intent.putExtra("id",temp.getId());
+                intent.putExtra("title",temp.getTitle());
+                intent.putExtra("date",temp.getDate());
+                intent.putExtra("contentMain",temp.getContentMain());
+                intent.putExtra("content",temp.getContent());
+                startActivity(intent);
+            }
+        });
+
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {

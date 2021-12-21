@@ -30,6 +30,7 @@
         <entry key="..\:/AndroidStudio/Nhom13/app/src/main/res/menu/nav.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/drawable/circle.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/drawable/ic_arrow_back.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/drawable/ic_delete.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/activity_add_habit.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/activity_count_down.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/activity_dash_board.xml" value="0.20520833333333333" />
@@ -42,6 +43,7 @@
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/bottom_event_setting.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/bottom_habit_time.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/diary_add.xml" value="0.16" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/diary_detail.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/diary_item.xml" value="0.2" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/event_add.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/TimeReminder/app/src/main/res/layout/event_detail.xml" value="0.20520833333333333" />

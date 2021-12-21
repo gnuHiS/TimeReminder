@@ -14,6 +14,8 @@ public class DiaryHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "timeReminder";
     private static final int VERSION = 1;
+    String sql_creat_table_diary = "CREATE TABLE IF NOT EXISTS diary(id INTEGER PRIMARY KEY AUTOINCREMENT , title VARCHAR(200), " +
+            "date VARCHAR(200), contentMain VARCHAR(200), content VARCHAR(2000));";
 
     public DiaryHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -22,17 +24,13 @@ public class DiaryHelper extends SQLiteOpenHelper {
 
     public void CreatTable(){
         SQLiteDatabase db = getWritableDatabase();
-        String sql_diary = "CREATE TABLE IF NOT EXISTS diary(id INTEGER PRIMARY KEY AUTOINCREMENT , title VARCHAR(200), " +
-                "date VARCHAR(200), contentMain VARCHAR(200), content VARCHAR(200));";
-        db.execSQL(sql_diary);
+
+        db.execSQL(sql_creat_table_diary);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-        String sql_diary = "CREATE TABLE IF NOT EXISTS diary(id INTEGER PRIMARY KEY AUTOINCREMENT , title VARCHAR(200), " +
-                "date VARCHAR(200), contentMain VARCHAR(200), content VARCHAR(200));";
-        db.execSQL(sql_diary);
+        db.execSQL(sql_creat_table_diary);
     }
 
 
@@ -68,11 +66,26 @@ public class DiaryHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean Update(){
-        return false;
+    public boolean Update(int id, String title, String date, String contentMain, String content){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("title", title);
+        cv.put("date", date);
+        cv.put("contentMain", contentMain);
+        cv.put("content", content);
+        long result = db.update("diary", cv, " id = ? ", new String[] {String.valueOf(id)});
+        if(result == -1){
+            return false;
+        }
+        return true;
     }
 
-    public boolean Delete(){
-        return false;
+    public boolean Delete(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        long result = db.delete("diary", "id = ?", new String[]{String.valueOf(id)});
+        if(result == -1){
+            return false;
+        }
+        return true;
     }
 }

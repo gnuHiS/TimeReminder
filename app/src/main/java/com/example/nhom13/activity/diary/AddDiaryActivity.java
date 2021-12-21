@@ -91,7 +91,7 @@ public class AddDiaryActivity extends AppCompatActivity {
             Toast.makeText(this, "Khong duoc de trong", Toast.LENGTH_LONG).show();
         }
         else{
-            boolean done = diaryHelper.Insert(editTextTitle.getText().toString(),"textViewDate.getText().toString()",editTextContentMain.getText().toString(),editTextContent.getText().toString());
+            boolean done = diaryHelper.Insert(editTextTitle.getText().toString(),textViewDate.getText().toString(),editTextContentMain.getText().toString(),editTextContent.getText().toString());
             if(done){
                 Toast.makeText(this,"Them thanh cong",Toast.LENGTH_SHORT).show();
                 onBackPressed();
